@@ -101,11 +101,11 @@ class kibana4 (
   $bundled_plugin_ids          = $kibana4::params::bundled_plugin_ids,
 ) inherits kibana4::params {
 
-  anchor{'kibana4::begin'}->
-  class {'kibana4::user': }->
+  anchor{'kibana4::begin':   }->
+  class {'kibana4::user':    }->
   class {'kibana4::install': }->
-  class {'kibana4::config': }~>
+  class {'kibana4::config':  }~>
   class {'kibana4::service': }->
-  anchor{'kibana4::end'}
+  anchor{'kibana4::end': }
 
 }
